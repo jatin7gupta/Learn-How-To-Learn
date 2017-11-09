@@ -11,8 +11,8 @@ export class NavbarComponent implements OnInit {
   constructor() {
     this.links=[
       {
-        'linkName':'Feed',
-        'linkURL':'/feed'
+        'linkName':'Home',
+        'linkURL':'/home'
       },
       {
         'linkName':'Favourite',
