@@ -1,12 +1,14 @@
 <div class="container">
   <div id="accordion" role="tablist" *ngFor="let item of blogs">
     <div class="card">
-      <div class="card-header" role="tab" id="headingOne">
+      <div class="card-header" role="tab" id="{{item.headingId}}">
+        <img src="{{item.logo}}" class="image-logo">
         <a class="font-bigger" data-toggle="collapse" href="#{{item.collapseId}}" aria-expanded="true" aria-controls="collapseOne">
           {{item.title}}
         </a>
+        ({{item.rating}}/5)
 
-        <div class="btn-group float-right " role="group" aria-label="Basic example">
+        <div class="btn-group float-right " role="group" aria-label="Blog Button">
           <button type="button" class="btn btn-flat float-right">
             <svg fill="#000000" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
               <path d="M0 0h24v24H0V0z" fill="none"/>
@@ -24,7 +26,16 @@
 
       <div id="{{item.collapseId}}" class="collapse " role="tabpanel" attr.aria-labelledby={{item.headerId}} data-parent="#accordion">
         <div class="card-body">
+          <p>
+            Date: <span class="font-italic"> {{item.date}}</span>
+            <span class="float-right" >#{{item.category}}</span>
+          </p>
+
           {{item.content}}
+          <hr>
+          <p >
+            ~Author <span class="font-italic"> {{item.author}}</span>
+          </p>
         </div>
       </div>
     </div>
