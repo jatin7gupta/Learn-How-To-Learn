@@ -1,33 +1,30 @@
 <div class="container">
-  <form>
+  <br>
+  <form #myform="ngForm">
     <div class="form-group">
-      <label for="exampleFormControlInput1">Email address</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <label>Author</label>
+      <input type="text" name="author" #author="ngModel" [(ngModel)]="authors" class="form-control"  placeholder="Author">
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Example select</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+      <label>Blog Title</label>
+      <input type="text" name="blogTitle" #blogTitle="ngModel" [(ngModel)]="titleBlog" class="form-control"  placeholder="Blog Title">
+    </div>
+    <div class="form-group">
+      <label>Image URL</label>
+      <input type="text" class="form-control" name="image" #image="ngModel" [(ngModel)]="imageURL"  placeholder="Image URL">
+    </div>
+    <div class="form-group">
+      <label>Select Category</label>
+      <select [(ngModel)]="selectedCategory.id" class="form-control" name="dropdown" #dropdown="ngModel" (input)="onInput($event)">
+        <option *ngFor="let category of categories" value= {{category.id}}>{{category.name}}</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlSelect2">Example multiple select</label>
-      <select multiple class="form-control" id="exampleFormControlSelect2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+      <label>Content</label>
+      <textarea class="form-control" [(ngModel)]="contentData" name="content" #content="ngModel" rows="9"></textarea>
     </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Example textarea</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
+    <button class="btn btn-flat" (click)="submitForm()">Submit</button>
   </form>
+  <br>
 </div>
 

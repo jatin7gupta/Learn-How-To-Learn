@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+class Category {
+  constructor(public id: string, public name: string) { }
+}
+
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -7,9 +11,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  authors:string;
+  imageURL:string;
+  contentData: string;
+  titleBlog: string;
+
+  selectedCategory: Category;
+  categories = [
+    new Category('Technology', 'Technology' ),
+    new Category('Creativity', 'Creativity' ),
+    new Category('Entrepreneurship', 'Entrepreneurship' ),
+    new Category('Politics', 'Politics'),
+    new Category('Cars', 'Cars')
+  ];
+
+  constructor(){}
 
   ngOnInit() {
+    this.selectedCategory = this.categories[1];
   }
 
+  onInput($event) {
+    $event.preventDefault();
+    console.log('selected: ' + $event.target.value);
+  }
+
+  submitForm(){
+    let blogData={
+      title: this.titleBlog,
+      author: this.authors,
+      date:Date.now(),
+      logo:this.imageURL,
+      rating: 5,
+      category: this.selectedCategory,
+      content:this.contentData
+    }
+
+  }
 }

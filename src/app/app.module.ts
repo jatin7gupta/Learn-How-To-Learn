@@ -10,6 +10,7 @@ import { BodyComponent } from './body/body.component';
 import { HomeComponent } from './body/home/home.component';
 import { CreateComponent } from './body/create/create.component';
 import {WebService} from './web.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {WebService} from './web.service';
     BrowserModule,
     HttpModule,
     RouterModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path: 'create',
