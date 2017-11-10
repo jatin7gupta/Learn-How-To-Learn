@@ -27,38 +27,23 @@ import {WebService} from './web.service';
     RouterModule.forRoot([
       {
         path: 'create',
-        component: BodyComponent,
-        children: [
-          { path: '', component: CreateComponent },
-        ]
+        component: CreateComponent
       },
       {
         path: 'favourite',
-        component: BodyComponent,
-        children: [
-          { path: '', component: HomeComponent },
-        ]
+        component: HomeComponent
       },
       {
         path:'home',
-        component: BodyComponent,
-        children: [
-          { path: '', component: HomeComponent },
-          ]
+        component: HomeComponent
       },
       {
         path: '',
-        component: BodyComponent,
-        children: [
-          { path: '', component: HomeComponent },
-        ]
+        component: HomeComponent
       },
       {
         path:'**',
-        component: HomeComponent,
-        /*children: [
-          { path: '', component: HomeComponent },
-        ]*/
+        component: HomeComponent
       }
 
     ])
