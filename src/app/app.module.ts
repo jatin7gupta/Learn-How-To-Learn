@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './header/navbar/navbar.component';
 import { RouterModule} from '@angular/router';
-import {HttpModule} from '@angular/http';
+import { HttpModule } from '@angular/http';
 import { BodyComponent } from './body/body.component';
 import { HomeComponent } from './body/home/home.component';
 import { CreateComponent } from './body/create/create.component';
@@ -45,7 +45,6 @@ import {WebService} from './web.service';
         path:'**',
         component: HomeComponent
       }
-
     ])
   ],
   providers: [WebService],
