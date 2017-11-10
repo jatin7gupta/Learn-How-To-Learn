@@ -1,17 +1,17 @@
 <div class="container">
   <br>
-  <form #myform="ngForm">
+  <form #myform="ngForm" (ngSubmit)="submitForm(myform.value)">
     <div class="form-group">
       <label>Author</label>
-      <input type="text" name="author" #author="ngModel" [(ngModel)]="authors" class="form-control"  placeholder="Author">
+      <input type="text" name="author" minlength="3" required #author="ngModel" [(ngModel)]="authors" class="form-control"  placeholder="Author">
     </div>
     <div class="form-group">
       <label>Blog Title</label>
-      <input type="text" name="blogTitle" #blogTitle="ngModel" [(ngModel)]="titleBlog" class="form-control"  placeholder="Blog Title">
+      <input type="text" name="blogTitle" required #blogTitle="ngModel" [(ngModel)]="titleBlog" class="form-control"  placeholder="Blog Title">
     </div>
     <div class="form-group">
       <label>Image URL</label>
-      <input type="text" class="form-control" name="image" #image="ngModel" [(ngModel)]="imageURL"  placeholder="Image URL">
+      <input type="text" class="form-control" required name="image" #image="ngModel" [(ngModel)]="imageURL"  placeholder="Image URL">
     </div>
     <div class="form-group">
       <label>Select Category</label>
@@ -21,9 +21,9 @@
     </div>
     <div class="form-group">
       <label>Content</label>
-      <textarea class="form-control" [(ngModel)]="contentData" name="content" #content="ngModel" rows="9"></textarea>
+      <textarea class="form-control" required [(ngModel)]="contentData" name="content" #content="ngModel" rows="9"></textarea>
     </div>
-    <button class="btn btn-flat" (click)="submitForm()">Submit</button>
+    <button type="submit" class="btn btn-flat" >Submit</button>
   </form>
   <br>
 </div>

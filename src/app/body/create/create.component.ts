@@ -36,16 +36,20 @@ export class CreateComponent implements OnInit {
     console.log('selected: ' + $event.target.value);
   }
 
-  submitForm(){
+  submitForm(value){
+
+    let newDate = new Date(Date.now());
+
     let blogData={
       title: this.titleBlog,
       author: this.authors,
-      date:Date.now(),
+      date:newDate,
       logo:this.imageURL,
       rating: 5,
       category: this.selectedCategory,
       content:this.contentData
-    }
-
+    };
+    // {{dateString |  date:'MM/dd/yyyy'}}
+    console.log(value);
   }
 }
