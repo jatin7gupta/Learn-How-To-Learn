@@ -9,7 +9,7 @@ import {HttpModule} from '@angular/http';
 import { BodyComponent } from './body/body.component';
 import { HomeComponent } from './body/home/home.component';
 import { CreateComponent } from './body/create/create.component';
-import { FavouritesComponent } from './body/favourites/favourites.component';
+import {WebService} from './web.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,6 @@ import { FavouritesComponent } from './body/favourites/favourites.component';
     BodyComponent,
     HomeComponent,
     CreateComponent,
-    FavouritesComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +36,7 @@ import { FavouritesComponent } from './body/favourites/favourites.component';
         path: 'favourite',
         component: BodyComponent,
         children: [
-          { path: '', component: FavouritesComponent },
+          { path: '', component: HomeComponent },
         ]
       },
       {
@@ -46,7 +45,6 @@ import { FavouritesComponent } from './body/favourites/favourites.component';
         children: [
           { path: '', component: HomeComponent },
           ]
-
       },
       {
         path: '',
@@ -57,15 +55,15 @@ import { FavouritesComponent } from './body/favourites/favourites.component';
       },
       {
         path:'**',
-        component: BodyComponent,
-        children: [
+        component: HomeComponent,
+        /*children: [
           { path: '', component: HomeComponent },
-        ]
+        ]*/
       }
 
     ])
   ],
-  providers: [],
+  providers: [WebService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
