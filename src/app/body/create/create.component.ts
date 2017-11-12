@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {WebService} from '../../web.service';
+import {Router} from '@angular/router';
+import {HomeComponent} from '../home/home.component';
 
 class Category {
   constructor(public id: string, public name: string) { }
@@ -11,10 +14,6 @@ class Category {
 })
 export class CreateComponent implements OnInit {
 
-  authors:string;
-  imageURL:string;
-  contentData: string;
-  titleBlog: string;
 
   selectedCategory: Category;
   categories = [
@@ -25,10 +24,10 @@ export class CreateComponent implements OnInit {
     new Category('Cars', 'Cars')
   ];
 
-  constructor(){}
+  constructor(private webService: WebService, private router: Router){}
 
   ngOnInit() {
-    this.selectedCategory = this.categories[1];
+    this.selectedCategory = this.categories[0];
   }
 
   onInput($event) {
@@ -40,16 +39,25 @@ export class CreateComponent implements OnInit {
 
     let newDate = new Date(Date.now());
 
-    let blogData={
-      title: this.titleBlog,
-      author: this.authors,
-      date:newDate,
-      logo:this.imageURL,
-      rating: 5,
-      category: this.selectedCategory,
-      content:this.contentData
-    };
     // {{dateString |  date:'MM/dd/yyyy'}}
-    console.log(value);
+
+    let blogData={
+      author: value.author,
+      title: value.blogTitle,
+      date:newDate.toString(),
+      logo:value.image,
+      category: value.dropdown,
+      rating: 5,
+      content: value.content
+    };
+
+    this.webService.postData(JSON.stringify(blogData))
+      .subscribe(res=>{
+        console.log(res);
+      },
+      (err) => console.error(err),
+      ()=>{
+      this.router.navigate([HomeComponent]);
+    })
   }
 }

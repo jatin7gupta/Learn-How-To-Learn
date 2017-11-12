@@ -1,17 +1,47 @@
 <div class="container">
   <br>
-  <form #myform="ngForm" (ngSubmit)="submitForm(myform.value)">
+  <form #createform="ngForm" (ngSubmit)="submitForm(createform.value); createform.reset()">
     <div class="form-group">
       <label>Author</label>
-      <input type="text" name="author" minlength="3" required #author="ngModel" [(ngModel)]="authors" class="form-control"  placeholder="Author">
+      <input type="text" name="author" minlength="3" maxlength="70" required #author="ngModel" ngModel class="form-control"  placeholder="Author">
+      <div *ngIf="author.errors && (author.dirty|| author.touched)" class="alert alert-danger">
+        <div [hidden]="!author.errors.required">
+          Please enter a name
+        </div>
+        <div [hidden]="!author.errors.minlength">
+          Please enter alteast 3 characters
+        </div>
+        <div [hidden]="!author.errors.maxlength">
+          Please enter less than 70 characters
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label>Blog Title</label>
-      <input type="text" name="blogTitle" required #blogTitle="ngModel" [(ngModel)]="titleBlog" class="form-control"  placeholder="Blog Title">
+      <input type="text" name="blogTitle"  minlength="3" maxlength="160"  required #blogTitle="ngModel" ngModel class="form-control"  placeholder="Blog Title">
+      <div *ngIf="blogTitle.errors && (blogTitle.dirty|| blogTitle.touched)" class="alert alert-danger">
+        <div [hidden]="!blogTitle.errors.required">
+          Please enter a name
+        </div>
+        <div [hidden]="!blogTitle.errors.minlength">
+          Please enter alteast 3 characters
+        </div>
+        <div [hidden]="!blogTitle.errors.maxlength">
+          Please enter less than 160 characters
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label>Image URL</label>
-      <input type="text" class="form-control" required name="image" #image="ngModel" [(ngModel)]="imageURL"  placeholder="Image URL">
+      <input type="text" class="form-control" maxlength="1000" pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})"  name="image" #image="ngModel" ngModel  placeholder="Image URL">
+      <div *ngIf="image.errors && (image.dirty|| image.touched)" class="alert alert-danger">
+        <div [hidden]="!image.errors.pattern">
+          Please enter a valid url
+        </div>
+        <div [hidden]="!image.errors.maxlength">
+          Please enter less than 1000 characters
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label>Select Category</label>
@@ -21,9 +51,9 @@
     </div>
     <div class="form-group">
       <label>Content</label>
-      <textarea class="form-control" required [(ngModel)]="contentData" name="content" #content="ngModel" rows="9"></textarea>
+      <textarea class="form-control" required ngModel name="content" #content="ngModel" rows="9"></textarea>
     </div>
-    <button type="submit" class="btn btn-flat" >Submit</button>
+    <button [disabled]="!createform.form.valid" type="submit" class="btn btn-flat" >Submit</button>
   </form>
   <br>
 </div>
