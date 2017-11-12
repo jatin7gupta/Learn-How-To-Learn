@@ -51,4 +51,29 @@ export class HomeComponent implements OnInit {
       )
   }
 
+  upVote(item){
+   let blogdata={
+     author:item.author,
+     title: item.title,
+     date:item.date,
+     logo:item.logo,
+     category:item.category,
+     votes:item.votes+1,
+     content:item.content,
+     id:item.id
+    };
+
+    this.webService.updateData(blogdata)
+      .subscribe(res=>{
+         // console.log(res);
+        },
+        (err)=>{
+        console.log(err);
+        },
+        ()=>{
+        this.getBlogData();
+        }
+      )
+  }
+
 }

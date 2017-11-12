@@ -39,15 +39,13 @@ export class CreateComponent implements OnInit {
 
     let newDate = new Date(Date.now());
 
-    // {{dateString |  date:'MM/dd/yyyy'}}
-
     let blogData={
       author: value.author,
       title: value.blogTitle,
       date:newDate.toString(),
       logo:value.image,
       category: value.dropdown,
-      rating: 5,
+      votes: 0,
       content: value.content
     };
 
@@ -55,7 +53,9 @@ export class CreateComponent implements OnInit {
       .subscribe(res=>{
         console.log(res);
       },
-      (err) => console.error(err),
+      (err) => {
+        console.error(err)
+      },
       ()=>{
       this.router.navigate([HomeComponent]);
     })

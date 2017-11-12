@@ -4,7 +4,7 @@ export interface Blogs{
   author: string;
   date: string;
   logo: string;
-  rating: string;
+  votes: string;
   category: string;
   content: string;
 }
