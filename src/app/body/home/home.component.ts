@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WebService} from '../../web.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,15 +11,15 @@ export class HomeComponent implements OnInit {
 
   blogs:any[];
 
-  constructor(private webService:WebService) {
+  constructor(private webService:WebService, private router: Router) {
     this.getBlogData();
   }
 
   ngOnInit() {
-
   }
 
   getBlogData(){
+
     this.webService.getData()
       .subscribe(
         res=>{
@@ -32,6 +33,9 @@ export class HomeComponent implements OnInit {
             item.headingId=item.id+"heading";
             item.collapseId = item.id+"collapse";
           });
+          if(this.router.url ==='/trending'){
+            this.blogSort();
+          }
         }
       );
   }
@@ -74,6 +78,13 @@ export class HomeComponent implements OnInit {
         this.getBlogData();
         }
       )
+  }
+
+  blogSort(){
+    function comparator(a,b) {
+      return parseInt(b.votes) - parseInt(a.votes);
+    }
+    this.blogs.sort(comparator);
   }
 
 }

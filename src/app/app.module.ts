@@ -32,7 +32,7 @@ import {FormsModule} from '@angular/forms';
         component: CreateComponent
       },
       {
-        path: 'favourite',
+        path: 'trending',
         component: HomeComponent
       },
       {

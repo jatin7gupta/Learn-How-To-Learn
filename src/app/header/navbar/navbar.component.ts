@@ -15,8 +15,8 @@ export class NavbarComponent implements OnInit {
         'linkURL':'/home'
       },
       {
-        'linkName':'Favourite',
-        'linkURL':'/favourite'
+        'linkName':'Trending',
+        'linkURL':'/trending'
       },
       {
         'linkName':'Create',
