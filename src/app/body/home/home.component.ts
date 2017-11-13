@@ -87,4 +87,8 @@ export class HomeComponent implements OnInit {
     this.blogs.sort(comparator);
   }
 
+  updateBlog(item){
+    this.webService.changeNav(item);
+    this.router.navigateByUrl('/edit');
+  }
 }

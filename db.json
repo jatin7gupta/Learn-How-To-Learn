@@ -20,22 +20,22 @@
     {
       "author": "Apple",
       "title": "Apple Wiki",
-      "date": "Sun Nov 12 2017 13:37:37 GMT+0530 (India Standard Time)",
+      "date": "Mon Nov 13 2017 13:38:36 GMT+0530 (India Standard Time)",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/80px-Apple_logo_black.svg.png",
       "category": "Technology",
-      "votes": 19,
-      "content": "content",
+      "votes": 5,
+      "content": "hello world37",
       "id": 1
     },
     {
-      "author": "jatin",
-      "title": "onePlus",
-      "date": "Sun Nov 12 2017 13:54:02 GMT+0530 (India Standard Time)",
+      "author": "Gaurav Nagang",
+      "title": "aaa",
+      "date": "Mon Nov 13 2017 11:56:42 GMT+0530 (India Standard Time)",
       "logo": "",
-      "category": "Technology",
-      "votes": 20,
-      "content": "oneplus",
-      "id": 2
+      "category": "Cars",
+      "votes": 8,
+      "content": "samsung content",
+      "id": 3
     }
   ]
 }

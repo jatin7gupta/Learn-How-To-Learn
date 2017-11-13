@@ -32,6 +32,10 @@ import {FormsModule} from '@angular/forms';
         component: CreateComponent
       },
       {
+        path: 'edit',
+        component: CreateComponent
+      },
+      {
         path: 'trending',
         component: HomeComponent
       },

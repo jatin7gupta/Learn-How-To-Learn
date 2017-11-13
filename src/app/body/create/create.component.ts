@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {WebService} from '../../web.service';
 import {Router} from '@angular/router';
-import {HomeComponent} from '../home/home.component';
+import {Subscription} from 'rxjs/Subscription';
+import {Blogs} from '../../shared/BlogInterface';
 
 class Category {
   constructor(public id: string, public name: string) { }
@@ -12,7 +13,7 @@ class Category {
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
-export class CreateComponent implements OnInit {
+export class CreateComponent implements OnInit, OnDestroy {
 
 
   selectedCategory: Category;
@@ -23,11 +24,28 @@ export class CreateComponent implements OnInit {
     new Category('Politics', 'Politics'),
     new Category('Cars', 'Cars')
   ];
+  blog: Blogs;
+  updateRequeust:boolean=false;
+  subscription:Subscription;
 
-  constructor(private webService: WebService, private router: Router){}
+  constructor(private webService: WebService, private router: Router){
+
+  }
 
   ngOnInit() {
     this.selectedCategory = this.categories[0];
+    this.subscription = this.webService.navItem$.subscribe(
+      item => {
+        this.blog = item;
+        this.updateRequeust = true;
+
+      }
+    );
+    console.log(this.blog);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   onInput($event) {
@@ -36,28 +54,47 @@ export class CreateComponent implements OnInit {
   }
 
   submitForm(value){
-
+    console.log(this.updateRequeust);
     let newDate = new Date(Date.now());
-
     let blogData={
       author: value.author,
       title: value.blogTitle,
       date:newDate.toString(),
       logo:value.image,
       category: value.dropdown,
-      votes: 0,
-      content: value.content
+      votes: this.updateRequeust? this.blog.votes:0,
+      content: value.content,
+
     };
 
-    this.webService.postData(JSON.stringify(blogData))
-      .subscribe(res=>{
-        console.log(res);
-      },
-      (err) => {
-        console.error(err)
-      },
-      ()=>{
-      this.router.navigate([HomeComponent]);
-    })
-  }
+    if(this.updateRequeust){
+
+      blogData['id']=this.blog.id;
+      // blogData['votes']=this.blog.votes;
+      console.log(blogData);
+      this.webService.updateData(blogData)
+        .subscribe(res=>{
+            console.log(res);
+          },
+          (err) => {
+            console.error(err)
+          },
+          ()=>{
+            this.router.navigateByUrl('/home');
+          })
+    }
+    else {
+      this.webService.postData(JSON.stringify(blogData))
+        .subscribe(res=>{
+            console.log(res);
+          },
+          (err) => {
+            console.error(err)
+          },
+          ()=>{
+            this.router.navigateByUrl('/home');
+          })
+      }
+    }
+
 }
