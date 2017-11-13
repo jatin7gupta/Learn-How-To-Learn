@@ -3,6 +3,7 @@ import {WebService} from '../../web.service';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import {Blogs} from '../../shared/BlogInterface';
+import {isNullOrUndefined} from 'util';
 
 class Category {
   constructor(public id: string, public name: string) { }
@@ -25,11 +26,23 @@ export class CreateComponent implements OnInit, OnDestroy {
     new Category('Cars', 'Cars')
   ];
   blog: Blogs;
-  updateRequeust:boolean=false;
+  updateRequeust:boolean;
   subscription:Subscription;
+  authorModel:string='';
+  titleModel:string='';
+  logoModel:string='';
+  contentModel:string='';
+
 
   constructor(private webService: WebService, private router: Router){
-
+    this.updateRequeust=false;
+    if(router.url==='/create'){
+      this.authorModel='';
+      this.titleModel='';
+      this.logoModel='';
+      this.contentModel='';
+      this.updateRequeust=false;
+    }
   }
 
   ngOnInit() {
@@ -37,9 +50,17 @@ export class CreateComponent implements OnInit, OnDestroy {
     this.subscription = this.webService.navItem$.subscribe(
       item => {
         this.blog = item;
-        this.updateRequeust = true;
+        if(!isNullOrUndefined(item)){
+          this.updateRequeust = true;
+          this.authorModel=this.blog.author;
+          this.contentModel=this.blog.content;
+          this.logoModel=this.blog.logo;
+          this.titleModel=this.blog.title;
+        }
 
-      }
+      },()=>{
+        this.updateRequeust = false;
+    }
     );
     console.log(this.blog);
   }
@@ -54,7 +75,6 @@ export class CreateComponent implements OnInit, OnDestroy {
   }
 
   submitForm(value){
-    console.log(this.updateRequeust);
     let newDate = new Date(Date.now());
     let blogData={
       author: value.author,
@@ -62,14 +82,14 @@ export class CreateComponent implements OnInit, OnDestroy {
       date:newDate.toString(),
       logo:value.image,
       category: value.dropdown,
-      votes: this.updateRequeust? this.blog.votes:0,
+      votes: 0,
       content: value.content,
-
     };
 
     if(this.updateRequeust){
 
       blogData['id']=this.blog.id;
+      blogData['votes']= +this.blog.votes;
       // blogData['votes']=this.blog.votes;
       console.log(blogData);
       this.webService.updateData(blogData)
