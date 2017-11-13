@@ -4,20 +4,9 @@
   <div class="container">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" >
-           Technology
+        <a class="nav-item nav-link" *ngFor="let item of categories" (click)="filterBlogs(item)">
+           {{item.name}}
         </a>
-        <a class="nav-item nav-link" >
-          Technology
-        </a>
-        <a class="nav-item nav-link" >
-          Technology
-        </a>
-        <a class="nav-item nav-link" >
-          Technology
-        </a><a class="nav-item nav-link" >
-        Technology
-      </a>
 
       </div>
     </nav>

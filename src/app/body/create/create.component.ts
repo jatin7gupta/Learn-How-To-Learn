@@ -4,10 +4,9 @@ import {Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import {Blogs} from '../../shared/BlogInterface';
 import {isNullOrUndefined} from 'util';
+import {Category} from '../../shared/category';
 
-class Category {
-  constructor(public id: string, public name: string) { }
-}
+
 
 @Component({
   selector: 'app-create',
@@ -18,13 +17,7 @@ export class CreateComponent implements OnInit, OnDestroy {
 
 
   selectedCategory: Category;
-  categories = [
-    new Category('Technology', 'Technology' ),
-    new Category('Creativity', 'Creativity' ),
-    new Category('Entrepreneurship', 'Entrepreneurship' ),
-    new Category('Politics', 'Politics'),
-    new Category('Cars', 'Cars')
-  ];
+  categories = [];
   blog: Blogs;
   updateRequeust:boolean;
   subscription:Subscription;
@@ -46,6 +39,7 @@ export class CreateComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.categories=this.webService.categories;
     this.selectedCategory = this.categories[0];
     this.subscription = this.webService.navItem$.subscribe(
       item => {

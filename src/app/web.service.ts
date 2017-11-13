@@ -3,6 +3,7 @@ import {Http, Headers} from "@angular/http";
 import 'rxjs/add/operator/map';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {Blogs} from './shared/BlogInterface';
+import {Category} from './shared/category';
 
 const Base_URL ='http://localhost:3000/blogs/';
 
@@ -16,6 +17,15 @@ const header = {
 export class WebService {
 
   constructor(private _http: Http) { }
+
+  categories = [
+    new Category('Technology', 'Technology' ),
+    new Category('Creativity', 'Creativity' ),
+    new Category('Entrepreneurship', 'Entrepreneurship' ),
+    new Category('Politics', 'Politics'),
+    new Category('Cars', 'Cars')
+  ];
+
   private blog: Blogs;
   private _navItemSource = new BehaviorSubject<Blogs>(this.blog);
   navItem$ = this._navItemSource.asObservable();
@@ -38,5 +48,4 @@ export class WebService {
   deleteData(data){
     return this._http.delete(Base_URL+data.id,header);
   }
-
 }

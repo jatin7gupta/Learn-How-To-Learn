@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {WebService} from '../../web.service';
 import {Router} from '@angular/router';
+import {Category} from '../../shared/category';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,15 @@ import {Router} from '@angular/router';
 export class HomeComponent implements OnInit {
 
   blogs:any[];
+  categories:Category[];
 
   constructor(private webService:WebService, private router: Router) {
     this.getBlogData();
   }
 
   ngOnInit() {
+    this.categories=this.webService.categories;
+    this.categories.unshift(new Category('All','All'))
   }
 
   getBlogData(){
@@ -90,5 +94,10 @@ export class HomeComponent implements OnInit {
   updateBlog(item){
     this.webService.changeNav(item);
     this.router.navigateByUrl('/edit');
+  }
+
+  filterBlogs(item){
+    console.log(item);
+    this.blogs=  this.blogs.filter(blog=> blog['category']===item.name);
   }
 }
