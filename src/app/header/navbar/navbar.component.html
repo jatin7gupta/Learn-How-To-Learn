@@ -6,12 +6,9 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav"  *ngFor="let item of links">
       <li class="nav-item ">
-        <a class="nav-link" routerLink="/{{item.linkURL}}">{{item.linkName}} </a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/{{item.linkURL}}">{{item.linkName}} </a>
       </li>
     </ul>
-    <!--<form class="form-inline my-2 my-lg-0">-->
-      <!--<input class="form-control mr-sm-2" type="search" placeholder="Search">-->
-      <!--<button class="btn btn-flat  my-2 my-sm-0" >Search</button>-->
-    <!--</form>-->
+
   </div>
 </nav>

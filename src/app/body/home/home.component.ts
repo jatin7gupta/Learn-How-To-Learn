@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {WebService} from '../../web.service';
 import {Router} from '@angular/router';
 import {Category} from '../../shared/category';
+import {isNullOrUndefined} from 'util';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,9 @@ export class HomeComponent implements OnInit {
 
   blogs:any[];
   categories:Category[];
+  fliteredBlogs: any[];
+
+
 
   constructor(private webService:WebService, private router: Router) {
     this.getBlogData();
@@ -19,7 +23,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.categories=this.webService.categories;
-    this.categories.unshift(new Category('All','All'))
   }
 
   getBlogData(){
@@ -40,6 +43,7 @@ export class HomeComponent implements OnInit {
           if(this.router.url ==='/trending'){
             this.blogSort();
           }
+          this.fliteredBlogs=this.blogs;
         }
       );
   }
@@ -96,8 +100,12 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl('/edit');
   }
 
-  filterBlogs(item){
-    console.log(item);
-    this.blogs=  this.blogs.filter(blog=> blog['category']===item.name);
+  filterBlogs(category){
+    if(isNullOrUndefined(category)|| category.name === 'All'){
+      this.fliteredBlogs=this.blogs;
+    }
+    else {
+      this.fliteredBlogs =  this.blogs.filter(blog=> blog['category']===category.name);
+    }
   }
 }

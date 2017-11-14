@@ -4,7 +4,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" *ngFor="let item of categories" (click)="filterBlogs(item)">
+        <a class="nav-item nav-link"  *ngFor="let item of categories" (click)="filterBlogs(item)">
            {{item.name}}
         </a>
 
@@ -13,7 +13,7 @@
   </div>
 </div>
 <div class="container">
-  <div id="accordion" role="tablist" *ngFor="let item of blogs">
+  <div id="accordion" role="tablist" *ngFor="let item of fliteredBlogs">
     <div class="card">
       <div class="card-header" role="tab" id="{{item.headingId}}">
         <img src="{{item.logo}}" class="image-logo">

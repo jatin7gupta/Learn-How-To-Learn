@@ -19,6 +19,7 @@ export class WebService {
   constructor(private _http: Http) { }
 
   categories = [
+    new Category('All', 'All' ),
     new Category('Technology', 'Technology' ),
     new Category('Creativity', 'Creativity' ),
     new Category('Entrepreneurship', 'Entrepreneurship' ),
