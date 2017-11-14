@@ -61,6 +61,7 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    this.webService.changeNav(undefined);
   }
 
   onInput($event) {
