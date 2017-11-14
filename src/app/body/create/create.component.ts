@@ -84,7 +84,6 @@ export class CreateComponent implements OnInit, OnDestroy {
 
       blogData['id']=this.blog.id;
       blogData['votes']= +this.blog.votes;
-      // blogData['votes']=this.blog.votes;
       console.log(blogData);
       this.webService.updateData(blogData)
         .subscribe(res=>{

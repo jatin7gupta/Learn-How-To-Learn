@@ -15,14 +15,13 @@ export class HomeComponent implements OnInit {
   categories:Category[];
   fliteredBlogs: any[];
 
-
-
   constructor(private webService:WebService, private router: Router) {
-    this.getBlogData();
   }
 
   ngOnInit() {
+    this.getBlogData();
     this.categories=this.webService.categories;
+
   }
 
   getBlogData(){
