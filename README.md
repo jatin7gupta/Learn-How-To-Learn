@@ -2,6 +2,10 @@
 
 This is a developed to learn basics of Angular 4.
 
+<p align="center">
+<a href="http://tinypic.com?ref=2qxvwp1" target="_blank"><img src="http://i65.tinypic.com/2qxvwp1.png" border="0" alt="Image and video hosting by TinyPic"></a>
+</p>
+
 ## Getting Started
 * To install type "npm install" to install all the dependencies.
 * Run `npm start` for a dev server and JSON-server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
