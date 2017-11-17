@@ -17,7 +17,7 @@ This is a developed to learn basics of Angular 4.
   * Easy Navigation using modern components of bootstrap.
 2.	The architecture should follow the component driven approach and the components must consume services to make GET, POST, PATCH, DELETE.
 3.	A favorite/Trending section: Showcasing Popular blogs ( with a title, author name, date, logo (if any)) based on user ratings.
-  * Since, there was no user, hence implement a trending page which sorts blogs on the basis of upvotes.
+  * Since, there was no user, hence implemented a trending page which sorts blogs on the basis of upvotes.
 4.	Core Features to Publish, Delete, Update the blog post.
 5.	Filter by category ( Categories of the blogs can be Tech, Management, Medical, etc.)
 
