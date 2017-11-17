@@ -18,38 +18,44 @@
   },
   "blogs": [
     {
-      "author": "hhfhhh",
-      "title": "gcgccg",
-      "date": "Tue Nov 14 2017 13:27:06 GMT+0530 (India Standard Time)",
-      "logo": "",
-      "category": "All",
-      "votes": 12,
-      "content": "a",
-      "id": 3,
-      "headingId": "3heading",
-      "collapseId": "3collapse"
+      "author": "Luke Stangel",
+      "title": "Facebook are building the ultimate perk",
+      "date": "Fri Nov 17 2017 11:35:43 GMT+0530 (India Standard Time)",
+      "logo": "https://cdn-images-1.medium.com/max/1500/1*Lo_CpJwQqZTj1EmbTn34Aw.png",
+      "category": "Technology",
+      "votes": 17,
+      "content": "Silicon Valley is ground zero for atypical employee benefits. At Facebook in Menlo Park, Calif., employees ride communal bicycles between buildings and eat for free at more than 24 restaurants. No matter where you sit, you’re never far from a “microkitchen,” with all-you-can-consume sodas and snacks. And don’t forget the massages and haircuts — all gratis.\nBut there’s one perk Silicon Valley hasn’t offered employees: their own apartments. And that’s about to change. This summer, both Facebook and Google proposed multimillion-dollar projects to build self-contained towns near their headquarters — towns complete with grocery stores, shops, cafes, movie theaters, gyms, and hundreds of apartments.\nIn doing so, these two tech behemoths could transform what it means to live and work in Silicon Valley, one of the most expensive housing markets in the U.S., and simultaneously alter the traditional relationship between employer and employee across the tech sector. Since Facebook and Google are industry standard-bearers, tech companies in other big cities where rents are skyrocketing and commutes are horrible — from Seattle to Boston to Washington — may soon be expected to offer workers two-bedroom apartments with views, within easy walking distance of their office.",
+      "id": 1
     },
     {
-      "author": "aaa",
-      "title": "aaa",
-      "date": "Tue Nov 14 2017 09:28:31 GMT+0530 (India Standard Time)",
-      "logo": "",
-      "category": "Cars",
-      "votes": 13,
-      "content": "q",
+      "author": "David Bryant",
+      "title": "A Quantum Achievement: But it’s Just the Beginning",
+      "date": "Fri Nov 17 2017 11:36:26 GMT+0530 (India Standard Time)",
+      "logo": "https://cdn-images-1.medium.com/max/1200/1*mw6Md1N8jN24QXBWCZx8zw.png",
+      "category": "Technology",
+      "votes": 27,
+      "content": "We wanted Firefox to be faster. Much faster. But it’s not enough to just be fast — our goal was to make an overall better browser for the user. Why have all that speed if you’re not going to put it where the user wants it most?\nI first shared our vision for “Project Quantum” last year. That’s the code name we used for our work to embrace a truly next generation architecture for Firefox, and for the web. Here we are one year later and today we celebrate the release of a new Firefox, the most powerful version of Firefox yet. Anyone who downloads this version, which is so advanced we call it “Firefox Quantum,” simply can’t help but notice the speed, performance improvements and the responsively slick new UI.\nFirefox Quantum is the best browser for today’s modern consumers because we used only the best of the latest technology to build it. It’s fast because if you look under the hood, you’ll see each layer was crafted from the bottom up with performance goals at the center.\nAs Mark Mayo explained, Firefox Quantum is not only the fastest yet, it keeps you safe from unwanted targeting with the Private Browsing mode. This is quite the achievement from the only major browser on the market backed by a not-for-profit company. We’ve revitalized Firefox to be the perfect browser for the casual user or the developer who needs modern tools and maximum performance for their work.\nAnd though today’s new Firefox represents an extraordinary advance in responsiveness, Firefox Quantum isn’t the end of our efforts. Rather, it’s just the start of a new era of Firefox.\nWe Called it Quantum",
+      "id": 2
+    },
+    {
+      "author": "Sinan özdemir",
+      "title": "Ugly is the New Black",
+      "date": "Fri Nov 17 2017 11:37:24 GMT+0530 (India Standard Time)",
+      "logo": "https://cdn-images-1.medium.com/max/2000/1*Lfgb38kxsP-GRu4rn6DS2g.jpeg",
+      "category": "Creativity",
+      "votes": 11,
+      "content": "As being one of the independent players of Internet world, Dropbox showed up with a brand new, bold and brave makeup and declared that it is not another boring blue website anymore. By this move, it should come as no surprise that Dropbox remembers and uses its right to be different when all digital products becoming more and more like each other. It duly did what needed to be dSinan özdemirone. What if it did not!",
+      "id": 3
+    },
+    {
+      "author": "Your Fat Friend",
+      "title": "There are no right answers for your fat friend.",
+      "date": "Fri Nov 17 2017 11:38:11 GMT+0530 (India Standard Time)",
+      "logo": "https://cdn-images-1.medium.com/max/900/1*pSQ2WzudyVeCC0Lrhm_Zvw.jpeg",
+      "category": "Creativity",
+      "votes": 16,
+      "content": "Are you sure that’s what you want?”\nAn electric current runs through me, its pavlovian fear like a lightning bolt in my veins. I have learned what lies behind that question, and I now stand electrified, charged and ready. A thinner family member has just asked me what I intend to order. “The teriyaki,” I say. Then, immediately, “are you sure that’s what you want?”\nThe interrogation has begun.\nWe’ve been down this road before, she and I. Whatever I say next, she’ll counter with how about a salad? If I order a salad, she’ll ask what kind of dressing? If I tell her, she’ll insist, just get oil and vinegar on the side.\nIf I decline to order a salad, frustration will slowly build behind her eyes. Eventually, it will overtake her. She will ask me how I usually eat. I will answer honestly. Then, she will begin the questioning afforded to her by her thinner body. How many servings of leafy greens do you get each day? Have you tried keto or paleo? Is your workout aerobic or anaerobic? Have you tried macrobiotic? If I have, she will probe for all the ways in which I have done it wrong. She will offer to spot me at the gym, go grocery shopping with me, coach me through the rookie mistakes that must have led to my body. I have proven myself to be an irresponsible owner of a body. My size is evidence that I am either too stupid or too weak to be thin.",
       "id": 4
-    },
-    {
-      "author": "Jatin",
-      "title": "Jatin",
-      "date": "Tue Nov 14 2017 13:33:27 GMT+0530 (India Standard Time)",
-      "logo": "",
-      "category": "Cars",
-      "votes": 0,
-      "content": "Jatin",
-      "id": 5,
-      "headingId": "5heading",
-      "collapseId": "5collapse"
     }
   ]
 }

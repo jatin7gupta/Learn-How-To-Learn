@@ -4,7 +4,6 @@ import {Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import {Blogs} from '../../shared/BlogInterface';
 import {isNullOrUndefined} from 'util';
-import {Category} from '../../shared/category';
 
 
 
@@ -16,7 +15,7 @@ import {Category} from '../../shared/category';
 export class CreateComponent implements OnInit, OnDestroy {
 
 
-  selectedCategory: Category;
+  selectedCategory: string = "ALL";
   categories = [];
   blog: Blogs;
   updateRequeust:boolean;
@@ -40,7 +39,7 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.categories=this.webService.categories;
-    this.selectedCategory = this.categories[0];
+    this.selectedCategory = this.categories[0].id;
     this.subscription = this.webService.navItem$.subscribe(
       item => {
         this.blog = item;

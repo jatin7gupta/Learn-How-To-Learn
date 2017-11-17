@@ -45,8 +45,8 @@
     </div>
     <div class="form-group">
       <label>Select Category</label>
-      <select [(ngModel)]="selectedCategory.id" class="form-control" name="dropdown" #dropdown="ngModel" (input)="onInput($event)">
-        <option *ngFor="let category of categories" value= {{category.id}}>{{category.name}}</option>
+      <select [(ngModel)]="selectedCategory"  class="form-control" name="dropdown" #dropdown="ngModel" (input)="onInput($event)">
+        <option *ngFor="let category of categories"   value= {{category.id}}>{{category.name}}</option>
       </select>
     </div>
     <div class="form-group">
