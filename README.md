@@ -2,7 +2,7 @@
 
 This is a developed to learn basics of Angular 4.
 
-##Getting Started
+## Getting Started
 * To install type "npm install" to install all the dependencies.
 * Run `npm start` for a dev server and JSON-server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 * Find the UI at "http://localhost:4200/" and db at :3000
