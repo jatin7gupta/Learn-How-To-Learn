@@ -31,7 +31,7 @@ This is a developed to learn basics of Angular 4.
 * [Bootstrap](http://getbootstrap.com/)
 ## Authors
 
-* **Jatin Gupta**  - [GitHub](https://github.com/jatin7gupta)
+ **Jatin Gupta**  - [GitHub](https://github.com/jatin7gupta)
 
 ## License
 
