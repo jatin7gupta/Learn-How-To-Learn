@@ -1,28 +1,38 @@
 # LearnHowToLearn
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
+This is a developed to learn basics of Angular 4.
 
-## Development server
+##Getting Started
+* To install type "npm install" to install all the dependencies.
+* Run `npm start` for a dev server and JSON-server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* Find the UI at "http://localhost:4200/" and db at :3000
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Prerequisites
 
-## Code scaffolding
+* Node
+* Browser
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features Built according to assignment
+1.	Usable concerning UI/UX.
+  * Easy Navigation using modern components of bootstrap.
+2.	The architecture should follow the component driven approach and the components must consume services to make GET, POST, PATCH, DELETE.
+3.	A favorite/Trending section: Showcasing Popular blogs ( with a title, author name, date, logo (if any)) based on user ratings.
+  * Since, there was no user, hence implement a trending page which sorts blogs on the basis of upvotes.
+4.	Core Features to Publish, Delete, Update the blog post.
+5.	Filter by category ( Categories of the blogs can be Tech, Management, Medical, etc.)
 
-## Build
+## Features Not Built
+* Implemented all the features as suggested by the instruction document.
+## Built With
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+* [Node](https://nodejs.org/en/) 
+* [Angular](http://angular.io)
+* [JSON-server](http://github.com/typicode/json-server)
+* [Bootstrap](http://getbootstrap.com/)
+## Authors
 
-## Running unit tests
+* **Jatin Gupta**  - [GitHub](https://github.com/jatin7gupta)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## License
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This project is licensed under the MIT License.

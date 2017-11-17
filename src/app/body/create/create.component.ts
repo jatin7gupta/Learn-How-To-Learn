@@ -53,7 +53,7 @@ export class CreateComponent implements OnInit, OnDestroy {
 
       },()=>{
         this.updateRequeust = false;
-    }
+      }
     );
     console.log(this.blog);
   }
@@ -107,7 +107,7 @@ export class CreateComponent implements OnInit, OnDestroy {
           ()=>{
             this.router.navigateByUrl('/home');
           })
-      }
     }
+  }
 
 }
